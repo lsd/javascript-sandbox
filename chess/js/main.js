@@ -1,36 +1,6 @@
 $(function() {
   init();
   console.log("Main Init Called");
-
-  /*
-    unique?
-      Piece on sq
-      Side
-      Castle
-      EnPas
-
-      posKey ^= RandNum for all pieces on squares
-      posKey ^= RandNum side, castle, enpass
-  */
-
-  var piece1 = RAND_32();
-  var piece2 = RAND_32();
-  var piece3 = RAND_32();
-  var piece4 = RAND_32();
-
-  var key = 0;
-  key ^= piece1;
-  key ^= piece2;
-  key ^= piece3;
-  key ^= piece4;
-  console.log("key:" + key.toString(16));
-  var key = 0;
-  key ^= piece4;
-  key ^= piece2;
-  key ^= piece1;
-  key ^= piece3;
-  console.log("key:" + key.toString(16));
-
 });
 
 function InitFilesRankBrd() {
@@ -61,8 +31,22 @@ function InitFilesRankBrd() {
   console.log("FilesBrd[SQUARES.E8]:" + FilesBrd[SQUARES.E8] + " RanksBrd[SQUARES.E8]:" + RanksBrd[SQUARES.E8]);
 }
 
+function InitHashKeys() {
+  var index = 0;
+
+  for (index = 0; index < 14 * 120; ++index) {
+    PieceKeys[index] = RAND_32();
+  }
+
+  SideKey = RAND_32();
+
+  for (index = 0; index < 16; ++index) {
+    CastleKeys[index] = RAND_32();
+  }
+}
 
 function init() {
   console.log("init() called");
-  InitFilesRankBrd()
+  InitFilesRankBrd();
+  InitHashKeys();
 }
