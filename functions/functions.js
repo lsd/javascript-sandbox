@@ -29,6 +29,12 @@ function identityf(x) {
   };
 }
 
+//write a function that adds from two invocations
+function addf(x) {
+  return function (y) {
+    x + y;
+  };
+}
 
 // var init = function init() {
 //   printer(fart);
