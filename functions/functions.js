@@ -21,6 +21,14 @@ function mul(x, y) {
   return x * y;
 }
 
+// write a function that takes an argument and returns a function that returns that argument
+
+function identityf(x) {
+  return function () {
+    return x;
+  };
+}
+
 
 // var init = function init() {
 //   printer(fart);
