@@ -3,3 +3,24 @@ body {
   margin: 0px;
   padding: 0px;
 }
+
+.scene {
+  float: left;
+  background-color: #000;
+  width: 100%;
+  height: 500px;
+}
+
+.grass {
+  float: left;
+  background-color: #23BC00;
+  width: 100%;
+  height: 100px;
+}
+
+.road {
+  float: left;
+  background-color: #CCC;
+  width: 100%;
+  height: 300px;
+}
