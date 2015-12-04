@@ -65,3 +65,16 @@ body {
   top: -50px;
   left: 50px;
 }
+
+.debugArea {
+  width: 100%;
+  background-color: black;
+  float: left;
+  height: 100%;
+}
+
+.debugTextareaClass {
+  width: 400px;
+  height: 150px;
+
+}
