@@ -36,6 +36,8 @@ function addf(x) {
   };
 }
 
+console.log(addf(3)(4));
+
 /*
 write a function that takes a binary function, and makes it callable with two invocations
   addf = applyf(add);
@@ -43,10 +45,10 @@ write a function that takes a binary function, and makes it callable with two in
   applyf(mul)(5)(6)
 */
 
-function applyf(binary) {
+function applyf(z) {
   return function (x) {
     return function (y) {
-      return binary(x, y);
+      return z(x, y);
     };
   };
 }
