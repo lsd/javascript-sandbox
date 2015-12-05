@@ -1,27 +1,25 @@
-//write a function that takes an argument and returns that arugment
+// 1. Write a function that takes an argument and returns that arugment
 
-function printer(x) {
-  return x;
-}
+  function printer(x) {
+    return x;
+  }
 
-var printer = function printer(x) {
-  return x;
-};
+  // Alt
+  var printer = function printer(x) {
+    return x;
+  };
 
-fart = printer('fart');
-console.log(fart);
+// 2. Write two binary functions add and mull, that take two numbers and return their sum and product
 
-// write two binary functions add and mull, that take two numbers and return their sum and product
+  function add(x, y) {
+    return x + y;
+  }
 
-function add(x, y) {
-  return x + y;
-}
+  function mul(x, y) {
+    return x * y;
+  }
 
-function mul(x, y) {
-  return x * y;
-}
-
-// write a function that takes an argument and returns a function that returns that argument
+// 3. Write a function that takes an argument and returns a function that returns that argument
 
 function identityf(x) {
   return function () {
@@ -29,34 +27,48 @@ function identityf(x) {
   };
 }
 
-//write a function that adds from two invocations
-function addf(x) {
-  return function (y) {
-    return x + y;
-  };
-}
+// 4. Write a function that adds from two invocations
 
-console.log(addf(3)(4));
+  function addf(x) {
+    return function (y) {
+      return x + y;
+    };
+  }
 
 /*
-write a function that takes a binary function, and makes it callable with two invocations
-  addf = applyf(add);
-  addf(3)(4)
-  applyf(mul)(5)(6)
+5. Write a function that takes a binary function, and makes it callable with two invocations
+
+  Example:
+    addf = applyf(add);
+    addf(3)(4)
+    applyf(mul)(5)(6)
 */
 
-function applyf(z) {
-  return function (x) {
-    return function (y) {
-      return z(x, y);
+  function applyf(binary) {
+    return function (x) {
+      return function (y) {
+        return binary(x, y);
+      };
     };
-  };
-}
+  }
 
+/*
+6. Write a function that takes a function and an argument, and returns a function that can supply a second argument
 
+  Example:
+    add3 = curry(add, 3);
+    add3(4):                7
+    curry(mul, 5)(6):       30
 
-// var init = function init() {
-//   printer(fart);
-// };
-//
-// console.log(init);
+*/
+
+  function curry(func, first) {
+    return function(second) {
+      return func(first, second);
+    };
+  }
+
+  // Alt
+  function curry(func, first) {
+    return applyf(func)(first);
+  }
