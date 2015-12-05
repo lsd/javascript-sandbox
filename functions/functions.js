@@ -15,6 +15,7 @@
     return x + y;
   }
 
+
   function mul(x, y) {
     return x * y;
   }
@@ -38,15 +39,14 @@ function identityf(x) {
 /*
 5. Write a function that takes a binary function, and makes it callable with two invocations
 
-  Example:
     addf = applyf(add);
     addf(3)(4)
     applyf(mul)(5)(6)
 */
 
   function applyf(binary) {
-    return function (x) {
-      return function (y) {
+    return function test(x) {
+      return function test2(y) {
         return binary(x, y);
       };
     };
@@ -55,7 +55,6 @@ function identityf(x) {
 /*
 6. Write a function that takes a function and an argument, and returns a function that can supply a second argument
 
-  Example:
     add3 = curry(add, 3);
     add3(4):                7
     curry(mul, 5)(6):       30
@@ -72,3 +71,18 @@ function identityf(x) {
   function curry(func, first) {
     return applyf(func)(first);
   }
+
+/*
+7. Without writing any new functions, show three ways to create the inc function
+
+  inc(5): 6
+  inc(inc(5)): 7
+*/
+
+  inc = addf(1);
+
+  inc = applyf(add)(1);
+  console.log(inc);
+  console.log(inc(5));
+
+  inc = curry(add, 1);
