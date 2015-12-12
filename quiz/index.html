@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="main-quiz-holder">
+      <div id="intro-container" class="questionContainer">
+          <a class="btnStart" href="#"><img src="img/start.png"/></a>
+      </div>
+      <div class="questionContainer hide">
+          <div class="question">
+              CSS is used to...
+          </div>
+          <ul class="answers">
+              <li>
+              <label><input data-key="a" type="radio">lend structure to the document</label>
+              </li>
+              <li>
+              <label><input data-key="b" type="radio">mold the presentation of the document</label>
+              </li>
+              <li>
+              <label><input data-key="c" type="radio">script the interactions on the page</label>
+              </li>
+              <li>
+              <label><input data-key="d" type="radio">You're crafty! This is a trick question.</label>
+              </li>
+          </ul>
+          <div class="btnContainer">
+              <div class="next">
+                  <a class="btnNext" href="#">Next</a>
+              </div>
+              <div class="clear">
+              </div>
+          </div>
+      </div>
+      <div class="questionContainer hide">
+          <div class="question">
+              The C in CSS stands for?
+          </div>
+          <ul class="answers">
+              <li>
+              <label><input data-key="a" type="radio">Crysis</label>
+              </li>
+              <li>
+              <label><input data-key="b" type="radio">Crocodile</label>
+              </li>
+              <li>
+              <label><input data-key="c" type="radio">Consistent</label>
+              </li>
+              <li>
+              <label><input data-key="d" type="radio">Cascading</label>
+              </li>
+          </ul>
+          <div class="btnContainer">
+              <div class="prev">
+                  <a class="btnPrev" href="#">Prev</a>
+              </div>
+              <div class="next">
+                  <a class="btnNext" href="#">Next</a>
+              </div>
+              <div class="clear">
+              </div>
+          </div>
+      </div>
+      <!-- More questions here -->
+      <div class="questionContainer hide">
+          <div class="question">
+              The * selector selects...
+          </div>
+          <ul class="answers">
+              <li>
+              <label><input data-key="a" type="radio">every div element</label>
+              </li>
+              <li>
+              <label><input data-key="b" type="radio">only paragraphs</label>
+              </li>
+              <li>
+              <label><input data-key="c" type="radio">only parent elements</label>
+              </li>
+              <li>
+              <label><input data-key="d" type="radio">every element</label>
+              </li>
+          </ul>
+          <div class="btnContainer">
+              <div class="prev">
+                  <a class="btnPrev" href="#">Prev</a>
+              </div>
+              <div class="next">
+                  <a class="btnShowResult" href="#">Finish</a>
+              </div>
+              <div class="clear">
+              </div>
+          </div>
+      </div>
+      <div id="results-container" class="questionContainer hide">
+          <div id="resultKeeper">
+          </div>
+      </div>
+      <div id="progressKeeper">
+          <div id="progress">
+          </div>
+      </div>
+      <div id="notice">
+          Please select an option
+      </div>
+  </div>
+
+  <script src="app.js" ></script>
+</body>
+</html>
