@@ -1,40 +1,39 @@
 // 1. Write a function that takes an argument and returns that arugment
 
-  function printer(x) {
-    return x;
-  }
+function printer(x) {
+  return x;
+}
 
-  // Alt
-  var printer = function printer(x) {
-    return x;
-  };
+// Alt
+var printer = function printer(x) {
+  return x;
+};
 
 // 2. Write two binary functions add and mull, that take two numbers and return their sum and product
 
-  function add(x, y) {
-    return x + y;
-  }
+function add(x, y) {
+  return x + y;
+}
 
-
-  function mul(x, y) {
-    return x * y;
-  }
+function mul(x, y) {
+  return x * y;
+}
 
 // 3. Write a function that takes an argument and returns a function that returns that argument
 
 function identityf(x) {
-  return function () {
+  return function() {
     return x;
   };
 }
 
 // 4. Write a function that adds from two invocations
 
-  function addf(x) {
-    return function (y) {
-      return x + y;
-    };
-  }
+function addf(x) {
+  return function(y) {
+    return x + y;
+  };
+}
 
 /*
 5. Write a function that takes a binary function, and makes it callable with two invocations
@@ -44,13 +43,13 @@ function identityf(x) {
     applyf(mul)(5)(6)
 */
 
-  function applyf(binary) {
-    return function test(x) {
-      return function test2(y) {
-        return binary(x, y);
-      };
+function applyf(binary) {
+  return function test(x) {
+    return function test2(y) {
+      return binary(x, y);
     };
-  }
+  };
+}
 
 /*
 6. Write a function that takes a function and an argument, and returns a function that can supply a second argument
@@ -61,16 +60,16 @@ function identityf(x) {
 
 */
 
-  function curry(func, first) {
-    return function(second) {
-      return func(first, second);
-    };
-  }
+function curry(func, first) {
+  return function(second) {
+    return func(first, second);
+  };
+}
 
-  // Alt
-  function curry(func, first) {
-    return applyf(func)(first);
-  }
+// Alt
+function curry(func, first) {
+  return applyf(func)(first);
+}
 
 /*
 7. Without writing any new functions, show three ways to create the inc function
@@ -79,10 +78,29 @@ function identityf(x) {
   inc(inc(5)): 7
 */
 
-  inc = addf(1);
+inc = addf(1);
 
-  inc = applyf(add)(1);
-  console.log(inc);
-  console.log(inc(5));
+inc = applyf(add)(1);
+console.log(inc);
+console.log(inc(5));
 
-  inc = curry(add, 1);
+inc = curry(add, 1);
+
+/*
+8. Write methodize, a function that converts a binary function to a method.
+
+Number.prototype.add = methodize(add);
+(3).add(4) // 7
+*/
+
+function methodize(func) {
+  return function(y) {
+    return func(this, y);
+  };
+}
+
+function methodize(func) {
+  return function (...y) {
+    return func(this, ...y);
+  };
+}
