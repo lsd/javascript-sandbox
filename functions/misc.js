@@ -93,3 +93,46 @@ function helloWorld(language) {
 console.log(helloWorld('es'));
 console.log(helloWorld('de'));
 console.log(helloWorld('en'));
+
+//Write a function named assignGrade that:
+//takes 1 argument, a number score.
+//returns a grade for the score, either "A", "B", "C", "D", or "F".
+//Call that function for a few different scores and log the result to make sure it works.
+
+var assignGrade = function assignGrade(numberScore) {
+  if (numberScore >= 90) {
+      return 'A';
+  } else if (numberScore >= 80 && numberScore < 90) {
+      return 'B';
+  } else if (numberScore >= 70 && numberScore < 80) {
+      return 'C';
+  } else if (numberScore >= 60 && numberScore < 70) {
+      return 'D';
+  } else {
+      return 'F';
+  }
+};
+
+console.log(assignGrade(90));
+console.log(assignGrade(89));
+console.log(assignGrade(79));
+console.log(assignGrade(60));
+console.log(assignGrade(5));
+console.log(assignGrade(-20));
+
+//Write a function named pluralize that:
+//takes 2 arguments, a noun and a number.
+//returns the number and pluralized form, like "5 cats" or "1 dog".
+//Call that function for a few different scores and log the result to make sure it works.
+//Bonus: Make it handle a few collective nouns like "sheep" and "geese".
+
+function pluralize(noun, number) {
+    if (number != 1 && noun != 'sheep' && noun != 'geese') {
+        return number + ' ' + noun + 's';
+    } else {
+        return number + ' ' + noun;
+    }
+}
+console.log('I have ' + pluralize('cat', 0));
+console.log('I have ' + pluralize('cat', 1));
+console.log('I have ' + pluralize('cat', 2));
