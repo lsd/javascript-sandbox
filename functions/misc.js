@@ -69,4 +69,27 @@ console.log(maxOfThree(1,2,5));
 // alt solution 
 var maxOfThree = [267, 306, 108];
 var largest = Math.max.apply(Math, maxOfThree); // 306
+
 console.log(largest);
+
+//Write a function that takes a character (i.e. a string of length 1) and returns true if it is a vowel, falseotherwise.
+
+
+// Write a function named helloWorld that:
+// takes 1 argument, a language code (e.g. "es", "de", "en")
+// returns "Hello, World" for the given language, for atleast 3  languages. It should default to returning English.
+// Call that function for each of the supported languages and log the result to make sure it works.
+
+function helloWorld(language) {
+   if (language == 'es') {
+       return 'Bonjour worldeh';
+   } else if (language == 'de') {
+       return 'Hola, mundo';
+   } else {
+       return 'hello world';
+   }
+};
+
+console.log(helloWorld('es'));
+console.log(helloWorld('de'));
+console.log(helloWorld('en'));
