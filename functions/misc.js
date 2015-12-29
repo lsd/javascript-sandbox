@@ -136,3 +136,25 @@ function pluralize(noun, number) {
 console.log('I have ' + pluralize('cat', 0));
 console.log('I have ' + pluralize('cat', 1));
 console.log('I have ' + pluralize('cat', 2));
+
+// Write a for loop that will iterate from 0 to 20. For each iteration, it will check if the current number is even or odd, and report that to the screen (e.g. "2 is even").
+
+for (var i = 0; i <= 20; i += 1) {
+    if (i % 2 === 0) {
+        console.log(i + ' is even');
+    } else {
+        console.log(i + ' is odd');
+    }
+}
+
+//Write a for loop that will iterate from 0 to 10. For each iteration of the for loop, it will multiply the number by 9 and log the result (e.g. "2 * 9 = 18").
+//
+//Bonus: Use a nested for loop to show the tables for every multiplier from 1 to 10 (100 results total).
+
+for (var i = 0; i <= 10; i += 1) {
+    console.log(i);
+    
+    for (var x = 0; x <= 10; x += 1) {
+        console.log(i*x);
+    }
+}
